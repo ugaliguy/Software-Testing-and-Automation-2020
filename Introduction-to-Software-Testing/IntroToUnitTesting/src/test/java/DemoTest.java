@@ -144,6 +144,26 @@ public class DemoTest {
 	}
 	
 	@Test
+	public void test_is_triangle_double_4() {
+		assertTrue(Demo.isTriangle(0.0001, 99999.9999, 99999.9999));
+	}
+	
+	@Test
+	public void test_is_triangle_double_5() {
+		assertTrue(Demo.isTriangle(0.000001, 0.000001, 0.000001));
+	}
+	
+	@Test
+	public void test_is_triangle_double_6() {
+		assertTrue(Demo.isTriangle(9999999.999999, 9999999.999999, 9999999.999999));
+	}
+	
+	@Test
+	public void test_is_triangle_double_7() {
+		assertTrue(Demo.isTriangle(Math.sqrt(448317), Math.sqrt(443556), Math.sqrt(4761)));
+	}
+	
+	@Test
 	public void test_is_NOT_triangle_1() {
 		assertFalse(Demo.isTriangle(3, 4, 8));
 	}
