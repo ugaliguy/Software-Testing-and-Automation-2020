@@ -129,6 +129,11 @@ public class DemoTest {
 	}
 	
 	@Test
+	public void test_is_triangle_8() {
+		assertTrue(Demo.isTriangle(2147483647, 2147483647, 2147483647));
+	}
+	
+	@Test
 	public void test_is_triangle_double_1() {
 		assertTrue(Demo.isTriangle(0.3, 0.4, 0.5));
 	}
