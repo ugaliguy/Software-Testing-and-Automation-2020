@@ -19,6 +19,7 @@
 package edu.ncsu.csc326.coffeemaker;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -43,6 +44,8 @@ public class CoffeeMakerTest {
 	private Recipe recipe2;
 	private Recipe recipe3;
 	private Recipe recipe4;
+	
+	private CoffeeMaker cm;
 
 	/**
 	 * Initializes some recipes to test with and the {@link CoffeeMaker} 
@@ -130,6 +133,21 @@ public class CoffeeMakerTest {
 	public void testMakeCoffee() {
 		coffeeMaker.addRecipe(recipe1);
 		assertEquals(25, coffeeMaker.makeCoffee(0, 75));
+	}
+	
+	@Test
+	public void testAddRecipe() {
+		Recipe temp;
+		boolean contains = false;
+		cm.addRecipe(recipe1);
+		Recipe[] array = cm.getRecipes();
+		for (int i = 0; i < array.length; i++) {
+			temp = array[i];
+			if (recipe1 == temp) {
+				contains = true;
+			}
+		}
+		assertTrue("Recipe not added.",contains);
 	}
 
 }
